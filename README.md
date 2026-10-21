@@ -6,6 +6,8 @@ Signals are shown as a tree of NATS subjects, such as `vehicle.YawRate` and `veh
 
 Other NATS clients connect to the server and subscribe to those subject names. Nothing here talks to a real car. The values are generated in the app so you can exercise subscribers with data that looks like live vehicle signals.
 
+![NATS EMU window, with the signal tree, yaw rate editor, and a running server](screen.png)
+
 ## Run
 
 ```bash

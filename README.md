@@ -1,6 +1,10 @@
 # NATS EMU
 
-Local NATS server that publishes emulated vehicle signals. `vehicle.YawRate` is centred on 0 and moves between -20 and +20 deg/s. Add more signals from the window, as numbers or as a list of text values, and switch each one on or off.
+NATS EMU is a desktop app that runs a real local NATS server and publishes made-up vehicle data on it. Use it when you need something to subscribe to — a dashboard, a logger, or another service — and you do not have a vehicle on the bench.
+
+Signals are shown as a tree of NATS subjects, such as `vehicle.YawRate` and `vehicle.Door.Driver`. Each one can be switched on or off. A number signal stays inside a minimum and maximum and wanders around a centre value. `vehicle.YawRate` is centred on 0 deg/s and moves between -20 and +20. You choose how often it updates and how far it moves each time: a change range of 1 to 5 steps up or down by 1, 2, 3, 4, or 5 at random. A signal can instead publish text from a list, such as gear `P`, `R`, `N`, and `D`, either picking any entry, stepping to the next one, or holding one value.
+
+Other NATS clients connect to the server and subscribe to those subject names. Nothing here talks to a real car. The values are generated in the app so you can exercise subscribers with data that looks like live vehicle signals.
 
 ## Run
 
